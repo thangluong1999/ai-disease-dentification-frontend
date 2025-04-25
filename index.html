@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Plant Diagnosis</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <h2>Smart Plant Disease Identification</h2>
+
+    <div class="upload-container">
+      <label for="mediaInput" class="upload-label"
+        >Choose a file (Image/Video)</label
+      >
+      <input
+        type="file"
+        id="mediaInput"
+        accept="image/*,video/*"
+        onchange="previewMedia()"
+        aria-describedby="fileHelp"
+      />
+      <small id="fileHelp" class="form-text text-muted"
+        >Supported file formats: .jpg, .png, .mp4, .avi, .mov</small
+      >
+      <button onclick="sendToAPI()" class="btn-diagnose" id="submitBtn">
+        Diagnose
+      </button>
+      <div id="loadingSpinner" class="spinner"></div>
+    </div>
+
+    <div id="mediaContainer"></div>
+    <div id="result"></div>
+    <div id="diagnosisDetails" class="diagnosis-details"></div>
+  </body>
+</html>
