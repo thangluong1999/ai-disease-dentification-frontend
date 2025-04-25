@@ -9,7 +9,7 @@ function previewMedia() {
   const file = mediaInput.files[0];
   if (!file) return;
 
-  // Xóa media hiện tại và ẩn kết quả cũ
+  // Clear current media and hide old results
   mediaContainer.innerHTML = "";
   mediaContainer.style.display = "flex";
   result.style.display = "none";

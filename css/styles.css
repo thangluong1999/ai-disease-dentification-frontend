@@ -92,7 +92,7 @@ input[type="file"]:focus {
   margin-top: 30px;
   background-color: #f1f1f1;
   border-radius: 12px;
-  display: none; /* ẩn ban đầu */
+  display: none; /* hidden initially */
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -117,7 +117,7 @@ input[type="file"]:focus {
   max-width: 600px;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  display: none; /* ẩn ban đầu */
+  display: none; /* hidden by default */
 }
 
 /* Spinner loading */
