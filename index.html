@@ -14,28 +14,58 @@
   <body>
     
     <div class="container">
+      <div class="left-panel">
+        
+      </div>
       <div class="upload-container">
-        <h2>Smart Plant Disease Identification</h2>
-        <label for="mediaInput" class="upload-label"
-          >Choose a file (Image/Video)</label
-        >
+        <h2>🌳 Smart Farm 🌳</h2>
+        <label for="mediaInput" class="btn-diagnose">
+          Upload file here 📤
+        </label>
         <input
           type="file"
           id="mediaInput"
           accept="image/*,video/*"
           onchange="previewMedia()"
           aria-describedby="fileHelp"
+          style="display: none;"
         />
-        <small id="fileHelp" class="form-text text-muted"
-          >Supported file formats: .jpg, .png, .mp4, .avi, .mov</small
-        >
-        <button onclick="sendToAPI()" class="btn-diagnose" id="submitBtn">
-          Diagnose
-        </button>
+        <small id="fileHelp" class="form-text text-muted" style="display: block; margin-top: 10px; font-size: 0.9em; color: #6c757d; text-align: center;">
+          Supported file formats: <strong>.jpg, .png, .mp4, .avi, .mov</strong>
+        </small>
         <div id="loadingSpinner" class="spinner"></div>
+        <div style="width: 100%;">
+          <h4 style="color: #6c757d;">History</h4>
+          <hr style="opacity: 0.3;"/>
+            <div class="history-container">
+            <div style="margin-top: 10px;">
+              <div class="history-item card">
+              <p><strong>File:</strong> leaf_disease.jpg</p>
+              <p><strong>Date:</strong> 2023-03-15</p>
+              <p><strong>Diagnosis:</strong> Powdery Mildew</p>
+              <button class="delete-btn" onclick="deleteHistoryItem(this)">Delete</button>
+              </div>
+              <div class="history-item card">
+              <p><strong>File:</strong> plant_video.mp4</p>
+              <p><strong>Date:</strong> 2023-03-14</p>
+              <p><strong>Diagnosis:</strong> Healthy</p>
+              <button class="delete-btn" onclick="deleteHistoryItem(this)">Delete</button>
+              </div>
+              <div class="history-item card">
+              <p><strong>File:</strong> infected_leaf.png</p>
+              <p><strong>Date:</strong> 2023-03-13</p>
+              <p><strong>Diagnosis:</strong> Leaf Spot</p>
+              <button class="delete-btn" onclick="deleteHistoryItem(this)">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="content">
-        <div id="mediaContainer"></div>
+        <div id="mediaContainer">
+        <!-- <button onclick="sendToAPI()" class="btn-diagnose" id="submitBtn">
+        </button> -->
+        </div>
       </div>
       <div class="result-leaf">
         <div id="result"></div>

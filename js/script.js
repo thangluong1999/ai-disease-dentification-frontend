@@ -54,7 +54,7 @@ async function sendToAPI() {
     const data = await response.json();
 
     result.innerHTML = `
-        <h3>Diagnosis Result: ${data.disease}</h3>
+        <h4>Diagnosis Result: ${data.disease}</h4>
         <p><strong>Confidence:</strong> ${data.confidence}%</p>
         <p><strong>Plant Type:</strong> ${data.plant_type}</p>
     `;

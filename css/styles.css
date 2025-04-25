@@ -25,21 +25,21 @@ h2 {
   color: #333;
   font-weight: 500;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .upload-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
   margin: 0 auto;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  text-align: left;
 }
 
 .upload-label {
@@ -51,6 +51,7 @@ h2 {
 }
 
 input[type="file"] {
+  max-width: 250px;
   font-size: 1.1em;
   padding: 12px;
   margin: 10px 0;
@@ -82,12 +83,13 @@ input[type="file"]:focus {
   font-size: 1.1em;
   padding: 12px 20px;
   border: none;
-  border-radius: 30px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: 100%;
-  max-width: 200px;
+  max-width: 100%;
   margin-top: 20px;
+  text-align: center;
 }
 
 .btn-diagnose:hover {
@@ -96,16 +98,16 @@ input[type="file"]:focus {
 
 #mediaContainer {
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   height: 700px;
-  margin-top: 30px;
-  background-color: #f1f1f1;
+  /* margin-top: 30px; */
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
   display: none; /* hidden initially */
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
 }
 
@@ -116,16 +118,34 @@ input[type="file"]:focus {
   object-fit: contain;
 }
 
+
+.result-leaf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+  padding: .5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.result-leaf ul li {
+  list-style-type: none;
+
+}
+
 #result,
 .diagnosis-details {
-  background-color: #fff;
   color: #333;
   margin-top: 25px;
   padding: 20px;
   width: 100%;
   max-width: 600px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   display: none; /* hidden by default */
 }
 
@@ -174,7 +194,7 @@ input[type="file"]:focus {
 
 .container {
   height: 100vh;
-  gap: 30px;
+  gap: 5px;
   background-color: white;
   display: flex;
   flex-direction: row;
@@ -182,13 +202,40 @@ input[type="file"]:focus {
 
 .container .content {
   flex-grow: 2;
-}
-
-.content {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .history {
   flex-grow: 1;
+}
+
+.history-item.card {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.history-item.card p {
+  margin: 5px 0;
+  font-size: 0.95em;
+  color: #495057;
+}
+
+.history-item.card .delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.85em;
+}
+
+.history-item.card .delete-btn:hover {
+  background-color: #c82333;
 }
